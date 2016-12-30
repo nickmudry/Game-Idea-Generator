@@ -120,7 +120,13 @@ else {
 	        	$shareFetch = mysql_fetch_array($sharedResult);
 	        	$sharesTotal = $shareFetch['primaryValue'] + 1;
 
-	        	mysql_query("UPDATE stats SET primaryValue='$sharesTotal' WHERE name='totalShared'") or die(mysql_error());
+	        	mysql_query("UPDATE stats SET primaryValue='$sharesTotal' WHERE name='totalShared'");
+
+	        	$game1Shares = $game1Fetch['timesShared'] + 1;
+	        	$game2Shares = $game2Fetch['timesShared'] + 1;
+        		mysql_query("UPDATE games SET timesShared='$game1Shares' WHERE name='$game1Name'");
+				mysql_query("UPDATE games SET timesShared='$game2Shares' WHERE name='$game2Name'");
+
         	}
         ?>
         <div class="col-lg-6 col-md-6 portfolio-item">
