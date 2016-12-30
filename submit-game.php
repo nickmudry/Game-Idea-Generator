@@ -20,6 +20,7 @@ include("includes/mysqlconnect.php");
         <div class="row">
             <div class="col-lg-12">
                 <h1>Submit Game</h1>
+                <h2>Please note, this form is currently back under construction. Please do not use this form just yet. Thank you!</h2>
                 <p>If there's a game that you don't see in our <a href="games.php">game's database</a>, or an error on a game, then please fill out the form below and we will update the database soon!</p>
                 <p><i>You must include a <b>game name</b> and a <b>YouTube trailer</b> for your submission to go through.</i></p> 
               <form role="form" method="POST" action="submit.php">
