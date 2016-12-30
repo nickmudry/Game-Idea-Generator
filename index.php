@@ -8,6 +8,8 @@ $page = "index";
 
 if (isset($_GET['share']))
 	$share = $_GET['share'];
+else
+	$share = null;
 
 
 include("includes/mysqlconnect.php");
