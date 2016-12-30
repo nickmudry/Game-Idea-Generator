@@ -92,6 +92,7 @@ else {
 	$gameGenResult = mysql_query("SELECT * FROM stats where name='totalGenerated'") or die(mysql_error());
 	$gamesGeneratedFetch = mysql_fetch_array($gameGenResult);
 	$gamesGenerated = $gamesGeneratedFetch['primaryValue'] + 1;
+
 	$gameGenUpdate = mysql_query("UPDATE stats SET primaryValue='$gamesGenerated' WHERE name='totalGenerated'") or die(mysql_error());
 	include("includes/header.php");
 	?>
@@ -114,6 +115,12 @@ else {
 	        	echo ("<center><h2>Click a button below to share this idea!</h2>");
 	        	include_once("includes/sharing.php");
 	        	echo ("</center>");
+
+	        	$sharedResult = mysql_query("SELECT * FROM stats where name='totalShared'") or die(mysql_error());
+	        	$shareFetch = mysql_fetch_array($sharedResult);
+	        	$sharesTotal = $shareFetch['primaryValue'] + 1;
+
+	        	mysql_query("UPDATE stats SET primaryValue='$sharesTotal' WHERE name='totalShared'") or die(mysql_error());
         	}
         ?>
         <div class="col-lg-6 col-md-6 portfolio-item">
