@@ -3,13 +3,16 @@
 
 <?PHP
 
+
 $page = "index";
 
-$share = $_GET['share'];
+if (isset($_GET['share']))
+	$share = $_GET['share'];
+
 
 include("includes/mysqlconnect.php");
 
-if ($_GET['games'] != null) //If the $_GET for games isn't null, take what's in the $_GET and show it on page. 
+if (isset($_GET['games'])) //If the $_GET for games isn't null, take what's in the $_GET and show it on page. 
 	{
 		$gameArray = explode("-", $_GET['games']); //Exploding the $_GET variable of games into an array. 
 		$game1Result = mysql_query("SELECT * FROM games WHERE name='$gameArray[0]'") or die(mysql_error()); 
