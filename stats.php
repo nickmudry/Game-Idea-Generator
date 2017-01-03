@@ -50,7 +50,6 @@
                 
                 
                 <h2><small>Stats Coming Soon</small></h2>
-                <p><strong>Total Combinations Shared:</strong> ???</p>
                 <p><strong>Latest Game Added:</strong> ???</p>
                 <p><strong>Most Popular Combination:</strong> ???</p>
                 <p><strong>Most Shared Combination:</strong> ???</p>
