@@ -7,9 +7,15 @@
 	$gameGenResult = mysql_query("SELECT * FROM stats where name='totalGenerated'") or die(mysql_error());
 	$gamesGeneratedFetch = mysql_fetch_array($gameGenResult);
 	$gamesGenerated = $gamesGeneratedFetch['primaryValue'];
-	
+
+    $mostSharedRes = mysql_query("SELECT * FROM stats where name='totalShared'") or die (mysql_error());
+	$mostSharedFetch = mysql_fetch_array($mostSharedRes);
+    $mostShared = $mostSharedFetch['primaryValue'];
+
 	$rowResult = mysql_query("SELECT * FROM games");
 	$numRows = mysql_num_rows($rowResult);
+
+
 
 ?>
 	
@@ -40,6 +46,7 @@
                 $mostGen = $row['name'];}?>
                 <a href="game.php?name=<?PHP echo($mostGen); ?>"><?PHP echo($mostGen);?></a></p>
                 <p><strong>Total Games In Database: </strong><?php echo($numRows); ?></p>
+                <p><strong>Total Games Shared: </strong><?php echo($mostShared); ?></p>
                 
                 
                 <h2><small>Stats Coming Soon</small></h2>
