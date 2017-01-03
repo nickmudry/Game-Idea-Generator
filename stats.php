@@ -47,10 +47,13 @@
                 <a href="game.php?name=<?PHP echo($mostGen); ?>"><?PHP echo($mostGen);?></a></p>
                 <p><strong>Total Games In Database: </strong><?php echo($numRows); ?></p>
                 <p><strong>Total Games Shared: </strong><?php echo($mostShared); ?></p>
-                
+                <p><strong>Recently Added Game: </strong> <?PHP 
+                $result = mysql_query("SELECT * FROM  games ORDER BY id DESC LIMIT 1"); 
+                while ($row = mysql_fetch_array($result)){
+                $recetnlyAdded = $row['name'];}?>
+                <a href="game.php?name=<?PHP echo($recetnlyAdded); ?>"><?PHP echo($recetnlyAdded);?></a></p>
                 
                 <h2><small>Stats Coming Soon</small></h2>
-                <p><strong>Latest Game Added:</strong> ???</p>
                 <p><strong>Most Popular Combination:</strong> ???</p>
                 <p><strong>Most Shared Combination:</strong> ???</p>
                 <p><strong>Games Added Today:</strong> ???</p>
